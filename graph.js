@@ -24,7 +24,7 @@ function main(){
     
     // Loading Json Data
     let option = {
-        url:"http://ejd.songho.ca/ios/covid19.json", 
+        url:"https://ejd.songho.ca/ios/covid19.json", 
         type: "GET", 
         dataType: "json"
     };
