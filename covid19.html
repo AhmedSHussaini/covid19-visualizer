@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid-19 Visualizer</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/png" href="../../favicon/favicon.ico">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="graph.css">
+
+    <!-- JavaScript -->
+    <script src="https://www.songho.ca/js/Logger.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="graph.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+
+
+</head>
+
+<body>
+    <!-- Header Block -->
+    <header id="header_block">Covid-19 Canada</header>
+
+    <!-- Main Graph block -->
+    <div id="graph_block">
+
+        <!--Left Block -->
+        <div id="left_block">
+            <!-- Province block -->
+            <div id="province_block">
+                <p>Province:</p>
+                <select name="province" id="province">
+                    <option value="canada" selected="selected">Canada</option>
+                    <option value="ontario">Ontario</option>
+                    <option value="quebec">Quebec</option>
+                    <option value="britishColumbia">British Columbia</option>
+                    <option value="alberta">Alberta</option>
+                    <option value="manitoba">Manitoba</option>
+                    <option value="newBrunswick">New Brunswick</option>
+                    <option value="newfoundland">Newfoundland and Labrador</option>
+                    <option value="novascotia">Nova Scotia</option>
+                    <option value="pei">Prince Edward Island</option>
+                    <option value="saskatchewan">Saskatchewan</option>
+                    <option value="yukon">Yukon</option>
+                    <option value="nunavut">Nunavut</option>
+                    <option value="nwt">Northwest Territories</option>
+                </select>
+            </div>
+
+            <!-- Date Block -->
+            <div id="date_block">
+                <div>
+                    <p>Date:</p>
+                </div>
+                <div>
+                    <label id="calendarLabel" for="chooseDate">
+                        <span id="createdDate">
+                            <!-- Filled By JS -->
+                        </span>
+                    </label>
+
+                </div>
+
+            </div>
+            <br>
+            <p id="confCases">Confirmed Cases:</p>
+            <!-- Confirmed Cases Block -->
+            <div id="cases_block">
+                <div id="daily_cases">
+                    <p>Daily</p>
+                    <p id="createdDaily"></p>
+                    <!-- filled by JS -->
+                </div>
+                <div id="total_cases">
+                    <p>Total</p>
+                    <p id="createdTotal"></p>
+                    <!-- filled by JS -->
+                </div>
+
+            </div>
+
+        </div>
+        <!-- End of Left Block -->
+
+        <!-- Right Block -->
+        <div id="right_block">
+            <!-- Graph filled here by JS -->
+            <div class="chartjs-size-monitor">
+                <div class="chartjs-size-monitor-expand">
+                    <div class></div>
+                </div>
+                <div class="chartjs-size-monitor-shrink">
+                    <div class></div>
+                </div>
+            </div>
+            <canvas id="chart" height="300px" width="500px" class="chartjs-render-monitor">
+
+            </canvas>
+        </div>
+        <!-- End of Right Block -->
+
+        <!-- New Right Block for second graph -->
+        <div id="new_block">
+            <!-- Graph filled here by JS -->
+            <div class="chartjs-size-monitor">
+                <div class="chartjs-size-monitor-expand">
+                    <div class></div>
+                </div>
+                <div class="chartjs-size-monitor-shrink">
+                    <div class></div>
+                </div>
+            </div>
+            <canvas id="chart2" height="300px" width="500px" class="chartjs-render-monitor">
+
+            </canvas>
+        </div>
+        <!-- end of right block -->
+
+        <!-- table block -->
+        
+        <section id="section">
+            <table id="table">
+                <thead>
+                    <button id="btnExpand">Expand</button>
+                    <tr>
+                        <th>Date</th>
+                        <th>Confirmed Today</th>
+                        <th>Total Confirmed</th>
+                        <th>Tested Today</th>
+                        <th>Total Tested</th>
+                        <th>Deaths Today</th>
+                        <th>Total Deaths</th>
+                    </tr>
+                </thead>
+                <tbody id="tableResults">
+                    
+                </tbody>
+            </table>
+        </section>
+        <!-- end of table block -->
+        
+    </div>
+    <!-- End of Main Graph Block -->
+
+</body>
+
+</html>
