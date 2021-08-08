@@ -90,7 +90,7 @@ function main(){
         console.log(lastItem);
     }
 
-    // Populating table wihh data
+    // Populating table with data
     function tableCreate(data){
         for(let e of data){
             var markup = '';
@@ -169,7 +169,7 @@ function main(){
         if(go.chart)
             go.chart.destroy();
         let context = document.getElementById("chart").getContext("2d");
-
+        
         go.chart = new Chart(context,
         {
             type:"line",
@@ -178,6 +178,8 @@ function main(){
                 labels:xValues,
                 datasets:
                 [{
+                    pointRadius:2,
+                    borderWidth:1,
                     data: yValues,
                     lineTension: 0,
                     backgroundColor: [
@@ -198,7 +200,7 @@ function main(){
             options:
             {
                 maintainAspectRatio: false,
-                responsive:true,
+                // responsive:true,
                 title:
                 {
                     display: true,
@@ -219,7 +221,7 @@ function main(){
             go.chart2.destroy();
         let context = document.getElementById("chart2").getContext("2d");
 
-        go.chart = new Chart(context,
+        go.chart2 = new Chart(context,
         {
             type:"line",
             data:
@@ -227,6 +229,8 @@ function main(){
                 labels:xValues,
                 datasets:
                 [{
+                    pointRadius:2,
+                    borderWidth:1,
                     data: yValues,
                     lineTension: 0,
                     backgroundColor: [
@@ -241,7 +245,7 @@ function main(){
             options:
             {
                 maintainAspectRatio: false,
-                responsive:true,
+                // responsive:true,
                 title:
                 {
                     display: true,
